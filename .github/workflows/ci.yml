@@ -1,0 +1,19 @@
+name: Phase1-CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print commit info
+        run: |
+          echo "Commit:"
+          git log -1
+
